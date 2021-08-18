@@ -1,0 +1,22 @@
+body{
+    font-family: 'Georgia', serif;
+    color: white;
+
+}
+
+#nav {
+    font-family: 'Georgia', serif;
+    color: white;
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    width: 10em;
+
+}
+
+#content {
+    font-family: 'Georgia', serif;
+    color: white;
+    margin-left: 10em;
+
+}

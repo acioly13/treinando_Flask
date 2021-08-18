@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Bem-vindo!</h1>
+<h1>Dupla: João Pedro e Emanuel</h1>
+{% if 'username' in session %}
+<p>Bem-Vindo de volta, {{session['username']}}!</p>
+<form action="{{url_for('index')}}" method="post">
+    <input type="submit" name="logout" value="Sair" />
+</form>
+{% else %}
+<p>Login Necessário:</p>
+<form action="{{url_for('index')}}" method="post">
+    <p>Usuário:<br />
+        <input type="text" name="username" /></p>
+    <p>Senha:<br />
+        <input type="password" name="passwd" /></p>
+    <p><input type="submit" value="Logar" /></p>
+</form>
+{% endif %}
+{% with messages = get_flashed_messages() %}
+{% for message in messages %}
+{{message}}
+{% endfor %}
+{% endwith %}
+{% endblock %}
